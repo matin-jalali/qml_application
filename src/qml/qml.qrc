@@ -5,5 +5,9 @@
         <file>qglib/content/QGWindow.qml</file>
         <file>constants/Constants.qml</file>
         <file>constants/qmldir</file>
+        <file>main_window/App.qml</file>
+        <file>main_window/menu/Menu_Titles.qml</file>
+        <file>assets/menu_background.jpg</file>
+        <file>qglib/content/QGTumbler.qml</file>
     </qresource>
 </RCC>
