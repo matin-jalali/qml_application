@@ -1,9 +1,9 @@
 QT += quick core network
 CONFIG += c++17
 
-SOURCES += main.cpp
+SOURCES += src/main.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += src/qml/qml.qrc
 
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>qglib/content/QGColorize.qml</file>
+        <file>qglib/content/QGWindow.qml</file>
+        <file>constants/Constants.qml</file>
+        <file>constants/qmldir</file>
     </qresource>
 </RCC>
