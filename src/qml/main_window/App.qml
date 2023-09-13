@@ -46,19 +46,19 @@ Rectangle {
     }/*column*/
 
     Item {
+        id: users_container
         anchors.horizontalCenter: parent.horizontalCenter;
         y: parent.height - (parent.height / 3.5);
         width: 660; height: 130
         clip: true;
-        Behavior on width {NumberAnimation{duration: 500; easing.type: Easing.InCubic}}
-
+//        Behavior on width {NumberAnimation{duration: 500; easing.type: Easing.InCubic; onFinished: users_container.width = 660;}}
         QGlib.QGTumbler {
             rotation: 90;
             width: parent.height;
             height: parent.width;
             anchors.centerIn: parent;
             onCurrentIndexChanged: console.log(currentIndex);
-            model: ["00", "01", "02", "03", "04", "05"];
+            model: ["Matin", "Blue Man", "Asd", "Ers", "John", "Add New"];
         }
     }
 

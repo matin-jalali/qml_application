@@ -17,12 +17,23 @@ Tumbler {
         rotation: -90;
         Column {
             anchors.fill: parent;
-            Rectangle {anchors.horizontalCenter: parent.horizontalCenter;  width: parent.width-20; height: width; radius: width; color: "gray"; }
+            Rectangle {anchors.horizontalCenter: parent.horizontalCenter;  width: parent.width-20; height: width; radius: width; color: "gray";
+
+                AnimatedImage
+                {
+                    width: parent.width
+                    height: parent.height
+                    source: "../../assets/hello_world.gif"
+
+//                    anchors.left: parent.left
+//                    anchors.top: parent.top
+//                    transform: Translate {x: 17; y: 2}
+                }
+
+
+            }
             Label { text: modelData;  color: "white"; anchors.horizontalCenter: parent.horizontalCenter; }
         }
-
-
-
     }/*delegate*/
 
 }

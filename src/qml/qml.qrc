@@ -9,5 +9,6 @@
         <file>main_window/menu/Menu_Titles.qml</file>
         <file>assets/menu_background.jpg</file>
         <file>qglib/content/QGTumbler.qml</file>
+        <file>assets/hello_world.gif</file>
     </qresource>
 </RCC>
