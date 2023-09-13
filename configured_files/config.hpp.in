@@ -1,0 +1,17 @@
+#ifndef MYPROJECT_CONFIG_HPP
+#define MYPROJECT_CONFIG_HPP
+
+#include <string_view>
+// CMake configured file.
+// in this particular case, we are using it to set the version number of our executable,
+// and also check for program version compatiblity.
+namespace myproject::cmake {
+static constexpr std::string_view project_name = "<project name>";
+static constexpr std::string_view project_version = "1.0.0";
+static constexpr int project_version_major { 1 };
+static constexpr int project_version_minor { 0 };
+static constexpr int project_version_patch { 4 };
+static constexpr int project_version_tweak { 2 };
+}// namespace myproject::cmake
+
+#endif
