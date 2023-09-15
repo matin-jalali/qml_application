@@ -10,5 +10,6 @@
         <file>assets/menu_background.jpg</file>
         <file>qglib/content/QGTumbler.qml</file>
         <file>assets/hello_world.gif</file>
+        <file>assets/user.png</file>
     </qresource>
 </RCC>
