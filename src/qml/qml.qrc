@@ -12,5 +12,7 @@
         <file>assets/hello_world.gif</file>
         <file>assets/user.png</file>
         <file>qglib/content/QGTextField.qml</file>
+        <file>qglib/content/QGParticle.qml</file>
+        <file>assets/particleA.png</file>
     </qresource>
 </RCC>

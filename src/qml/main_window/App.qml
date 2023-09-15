@@ -11,6 +11,17 @@ Rectangle {
     anchors.fill: parent;
     color: "#202020";
 
+
+    /////////////////////
+    QGlib.QGParticle {  width: parent.width/3; height: parent.height;
+        anchors.centerIn: parent; rotation: 90; z: 1; }
+
+
+
+
+
+
+    /////////////
     QGlib.QGColorize {
         id: _menu_background;
         anchors.fill: parent;
@@ -51,6 +62,7 @@ Rectangle {
         id: user;
         anchors.centerIn: parent;
         spacing: 15;
+        z: 2;
 
         AnimatedImage {
             id: image
@@ -133,6 +145,7 @@ Rectangle {
     }
 
     Item {
+        z: 2;
         id: users_container
         anchors.horizontalCenter: parent.horizontalCenter;
         y: parent.height - (parent.height / 3.5);
@@ -151,20 +164,54 @@ Rectangle {
 ///////////////////////////////////////////////////////////////////
 
 
-
-    Rectangle {
-        id: menu_titles;
+    Column {
+        id: menu
         width: parent.width/2;
-        height: 50;
-        visible: !welcome_pack.visible;
-        opacity: !welcome_pack.visible;
-        Behavior on opacity {NumberAnimation{duration: 500; easing.type: Easing.OutQuad;}}
         x: parent.width/5;
         y: parent.height/4;
-        color: "red";
+        spacing: 5;
+        Rectangle {
+            id: menu_titles;
+            width: parent.width;
+            height: 50;
+            visible: !welcome_pack.visible;
+            opacity: !welcome_pack.visible;
+            Behavior on opacity {NumberAnimation{duration: 500; easing.type: Easing.OutQuad;}}
+            color: "transparent";
+
+            Row {
+                anchors.verticalCenter: parent.verticalCenter;
+                spacing: 15;
+                Label { text: "Application"; color: "white"; font.bold: true; font.pixelSize: 15; }
+                Label { text: "Test"; color: "white"; font.bold: true; font.pixelSize: 15; }
+                Label { text: "Store"; color: "white"; font.bold: true; font.pixelSize: 15; }
+                Label { text: "Info"; color: "white"; font.bold: true; font.pixelSize: 15; }
+            }
+        }
+        Rectangle {
+            id: item_titles;
+            width: parent.width;
+            height: 120;
+            visible: !welcome_pack.visible;
+            opacity: !welcome_pack.visible;
+            Behavior on opacity {NumberAnimation{duration: 500; easing.type: Easing.OutQuad;}}
+            color: "transparent";
+        }
+        Rectangle {
+            id: item_description;
+            width: parent.width;
+            height: 180;
+            visible: !welcome_pack.visible;
+            opacity: !welcome_pack.visible;
+            Behavior on opacity {NumberAnimation{duration: 500; easing.type: Easing.OutQuad;}}
+            color: "transparent";
+        }
 
 
     }
+
+
+
 
 
 
