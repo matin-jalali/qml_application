@@ -132,8 +132,6 @@ Rectangle {
         }
     }
 
-
-
     Item {
         id: users_container
         anchors.horizontalCenter: parent.horizontalCenter;
@@ -148,6 +146,36 @@ Rectangle {
             model: ["Matin", "Blue Man", "Asd", "Ers", "John", "Add New"];
         }
     }
+
+
+///////////////////////////////////////////////////////////////////
+
+
+
+    Rectangle {
+        id: menu_titles;
+        width: parent.width/2;
+        height: 50;
+        visible: !welcome_pack.visible;
+        opacity: !welcome_pack.visible;
+        Behavior on opacity {NumberAnimation{duration: 500; easing.type: Easing.OutQuad;}}
+        x: parent.width/5;
+        y: parent.height/4;
+        color: "red";
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
