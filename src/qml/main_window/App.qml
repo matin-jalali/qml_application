@@ -5,7 +5,7 @@ import QtGraphicalEffects 1.12
 import "../qglib/content" as QGlib
 import "../constants"
 import "menu"
-
+import "../assets/"
 Rectangle {
     id: _app;
     anchors.fill: parent;
@@ -161,7 +161,7 @@ Rectangle {
     }
 
 
-///////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////
 
 
     Column {
@@ -188,6 +188,8 @@ Rectangle {
                 Label { text: "Info"; color: "white"; font.bold: true; font.pixelSize: 15; }
             }
         }
+
+
         Rectangle {
             id: item_titles;
             width: parent.width;
@@ -196,6 +198,18 @@ Rectangle {
             opacity: !welcome_pack.visible;
             Behavior on opacity {NumberAnimation{duration: 500; easing.type: Easing.OutQuad;}}
             color: "transparent";
+
+            ///////////////
+
+            QGlib.QGRoundedImage {
+                source: "../assets/menu_background.jpg";
+                radius: 10;
+            }
+
+
+
+            /////////////////
+
         }
         Rectangle {
             id: item_description;
@@ -209,12 +223,6 @@ Rectangle {
 
 
     }
-
-
-
-
-
-
 
 
 

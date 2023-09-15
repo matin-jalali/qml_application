@@ -6,12 +6,12 @@ Item {
     width: 360
     height: 600
 
-    property int score: 0
-    Text {
-        color: "white"
-        anchors.right: parent.right
-        text: score
-    }
+//    property int score: 0
+//    Text {
+//        color: "white"
+//        anchors.right: parent.right
+//        text: score
+//    }
 
     ParticleSystem {
         id: particles
@@ -23,7 +23,7 @@ Item {
             to: {"lighting":1, "unlit":99}
             ImageParticle {
                 source: "../../assets/particleA.png"
-                colorVariation: 0.01
+                colorVariation: 0.1
                 color: "#20555555"
             }
             GroupGoal {
@@ -106,12 +106,12 @@ Item {
 
         Emitter {
             height: parent.height/2
-            emitRate: 2
+            emitRate: 4
             lifeSpan: 4000//TODO: Infinite & kill zone
-            size: 20
-            sizeVariation: 2
-            velocity: PointDirection {x:60; xVariation: 120; yVariation: 50}
-            acceleration: PointDirection {y:40}
+            size: 24
+            sizeVariation: 4
+            velocity: PointDirection {x:120; xVariation: 180; yVariation: 50}
+            acceleration: PointDirection {y:120}
             group: "unlit"
         }
 

@@ -14,5 +14,6 @@
         <file>qglib/content/QGTextField.qml</file>
         <file>qglib/content/QGParticle.qml</file>
         <file>assets/particleA.png</file>
+        <file>qglib/content/QGRoundedImage.qml</file>
     </qresource>
 </RCC>
