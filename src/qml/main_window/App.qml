@@ -25,6 +25,7 @@ Rectangle {
     }
 
     Column {
+        id: welcome_pack
         anchors.horizontalCenter: parent.horizontalCenter;
         spacing: 20;
         y: parent.height / 4.5;
@@ -46,31 +47,61 @@ Rectangle {
         }
     }/*column*/
 
-                    AnimatedImage
-                    {
-                        id: image
-                        width: 100;
-                        height: width;
-                        anchors.centerIn: parent;
-                        source: "../../assets/hello_world.gif"
-                        onCurrentFrameChanged: if(currentFrame > 90) currentFrame = 0;
-                        property bool rounded: true;
-                        property bool adapt: true;
-                        property color color: "#99555555";
-                        Colorize {
-                            anchors.fill: image;
-                            source: image;
-                            hue: image.color.hslHue;
-                            saturation: image.color.hslSaturation;
-                            lightness: image.color.hslLightness;
-                            anchors.centerIn: parent;
-                        }
-                        layer.enabled: rounded;
-                        layer.effect: ShaderEffect {
-                            property real adjustX: image.adapt ? Math.max(width / height, 1) : 1
-                            property real adjustY: image.adapt ? Math.max(1 / (width / height), 1) : 1
+    Column {
+        id: user;
+        anchors.centerIn: parent;
+        spacing: 15;
 
-                            fragmentShader: "
+        AnimatedImage {
+            id: image
+            width: 100;
+            height: width;
+            speed: 2
+
+            NumberAnimation {
+                id: scale_animation
+                target: image;
+                property: "scale"
+                duration: 250
+                from: 1; to: 5;
+                easing.type: Easing.InOutQuad
+                onFinished: {
+                    image.playing = false;
+                    welcome_pack.visible = false;
+                    user.visible  = false;
+                    users_container.visible = false;
+                }
+            }
+            anchors.horizontalCenter: parent.horizontalCenter;
+            source: "../../assets/hello_world.gif"
+            property bool is_valid_password: false;
+            onCurrentFrameChanged: {
+                //                console.log(currentFrame)
+                if(is_valid_password && currentFrame === 190) {
+                    //                    image.scale *= 3;
+                    scale_animation.start();
+                }
+
+                if(is_valid_password === false && currentFrame > 90 )
+                    currentFrame = 0;
+            }
+            property bool rounded: true;
+            property bool adapt: true;
+            property color color: "#99555555";
+            Colorize {
+                anchors.fill: image;
+                source: image;
+                hue: image.color.hslHue;
+                saturation: image.color.hslSaturation;
+                lightness: image.color.hslLightness;
+                anchors.centerIn: parent;
+            }
+            layer.enabled: rounded;
+            layer.effect: ShaderEffect {
+                property real adjustX: image.adapt ? Math.max(width / height, 1) : 1
+                property real adjustY: image.adapt ? Math.max(1 / (width / height), 1) : 1
+
+                fragmentShader: "
                             #ifdef GL_ES
                                 precision lowp float;
                             #endif // GL_ES
@@ -90,11 +121,18 @@ Rectangle {
                                     * smoothstep((x * x + y * y) , 0.25 + delta, 0.25)
                                     * qt_Opacity;
                             }"
-                        }
-    //                    anchors.left: parent.left
-    //                    anchors.top: parent.top
-    //                    transform: Translate {x: 17; y: 2}
-                    }
+            }
+        }/*gif*/
+
+        QGlib.QGTextField {
+            width: parent.width;
+            height: 30;
+            placeholderText: "Password...";
+            enabled_background_color: "#454545";
+            layer_effect_color: text === '1' ? "#94afb8" : "red";
+            onTextChanged: if(text === '1') image.is_valid_password = true
+        }
+    }
 
 
 
@@ -104,13 +142,11 @@ Rectangle {
         y: parent.height - (parent.height / 3.5);
         width: 660; height: 130
         clip: true;
-//        Behavior on width {NumberAnimation{duration: 500; easing.type: Easing.InCubic; onFinished: users_container.width = 660;}}
         QGlib.QGTumbler {
             rotation: 90;
             width: parent.height;
             height: parent.width;
             anchors.centerIn: parent;
-            onCurrentIndexChanged: console.log(currentIndex);
             model: ["Matin", "Blue Man", "Asd", "Ers", "John", "Add New"];
         }
     }

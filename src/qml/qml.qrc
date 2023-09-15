@@ -11,5 +11,6 @@
         <file>qglib/content/QGTumbler.qml</file>
         <file>assets/hello_world.gif</file>
         <file>assets/user.png</file>
+        <file>qglib/content/QGTextField.qml</file>
     </qresource>
 </RCC>
