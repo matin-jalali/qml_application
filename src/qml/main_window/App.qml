@@ -182,10 +182,10 @@ Rectangle {
             Row {
                 anchors.verticalCenter: parent.verticalCenter;
                 spacing: 15;
-                Label { text: "Application"; color: "white"; font.bold: true; font.pixelSize: 15; }
-                Label { text: "Test"; color: "white"; font.bold: true; font.pixelSize: 15; }
-                Label { text: "Store"; color: "white"; font.bold: true; font.pixelSize: 15; }
-                Label { text: "Info"; color: "white"; font.bold: true; font.pixelSize: 15; }
+                Label { text: "Application"; color: "white"; font.pixelSize: 15; }
+                Label { text: "Test"; color: "white"; font.pixelSize: 15; }
+                Label { text: "Store"; color: "white"; font.pixelSize: 15; }
+                Label { text: "Info"; color: "white"; font.pixelSize: 15; }
             }
         }
 
@@ -201,10 +201,27 @@ Rectangle {
 
             ///////////////
 
-            QGlib.QGRoundedImage {
-                source: "../assets/menu_background.jpg";
-                radius: 10;
+            Row {
+                anchors.fill: parent;
+                spacing: 15;
+                QGlib.QGRoundedImage {
+                    source: "../assets/menu_background.jpg";
+                    radius: 10;
+                }
+                QGlib.QGRoundedImage {
+                    source: "../assets/github_wallpaper.jpg";
+                    radius: 10;
+                }
+                QGlib.QGRoundedImage {
+                    source: "../assets/software_test_walpaper.jpg";
+                    radius: 10;
+                }
+                QGlib.QGRoundedImage {
+                    source: "../assets/system_testing-wallpaper.jpg";
+                    radius: 10;
+                }
             }
+
 
 
 

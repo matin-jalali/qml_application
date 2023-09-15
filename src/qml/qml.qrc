@@ -15,5 +15,8 @@
         <file>qglib/content/QGParticle.qml</file>
         <file>assets/particleA.png</file>
         <file>qglib/content/QGRoundedImage.qml</file>
+        <file>assets/github_wallpaper.jpg</file>
+        <file>assets/software_test_walpaper.jpg</file>
+        <file>assets/system_testing-wallpaper.jpg</file>
     </qresource>
 </RCC>

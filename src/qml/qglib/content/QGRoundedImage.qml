@@ -12,7 +12,6 @@ Rectangle {
     property bool is_glow: true;
     property color glow_color: "#99888888";
 
-
     RectangularGlow {
         id: effect;
         visible: control.is_glow;
