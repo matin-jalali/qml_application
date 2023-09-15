@@ -76,13 +76,11 @@ Rectangle {
             source: "../../assets/hello_world.gif"
             property bool is_valid_password: false;
             onCurrentFrameChanged: {
-                //                console.log(currentFrame)
                 if(is_valid_password && currentFrame === 190) {
-                    //                    image.scale *= 3;
                     scale_animation.start();
                 }
 
-                if(is_valid_password === false && currentFrame > 90 )
+                if(!is_valid_password && currentFrame > 90 )
                     currentFrame = 0;
             }
             property bool rounded: true;
