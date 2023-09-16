@@ -183,7 +183,7 @@ Rectangle {
             Rectangle {
                 id: title_cursor;
                 anchors.verticalCenter: parent.verticalCenter;
-                height: parent.height;
+                height: 32;
                 width: 87;
                 x: -5;
                 radius: 10;
@@ -209,7 +209,6 @@ Rectangle {
                                 title_cursor.x = title_label.x - 5;
                                 title_cursor.width = title_label.width + 10;
                                 title_cursor.height = title_label.height + 15;
-                                console.log(title_cursor.height);
                             }
                         }
                     }/*title_label*/
@@ -233,10 +232,22 @@ Rectangle {
                 id: item_cursor;
                 width: 110;
                 height: 125;
-                color: "99888888";
+                color: "#99888888";
                 opacity: .7;
                 x: -5;
+                y: -3;
+                radius: 8;
                 Behavior on x { NumberAnimation{duration: 500; easing.type: Easing.OutQuad;} }
+
+                Label {
+                    anchors.horizontalCenter: parent.horizontalCenter;
+                    anchors.bottom: parent.bottom;
+                    anchors.bottomMargin: 5;
+                    text: "item";
+                    color: "white";
+                    font.bold: true;
+                    font.letterSpacing: .7;
+                }
 
             }
 
@@ -254,8 +265,6 @@ Rectangle {
                         cursorShape: Qt.PointingHandCursor;
                         onClicked: {
                             item_cursor.x = image_item.x - 5;
-//                            item_cursor.width = image_item.width + 10;
-//                            item_cursor.height = image_item.height + 15;
                         }
                     }
 
@@ -264,14 +273,41 @@ Rectangle {
                 QGlib.QGRoundedImage {
                     source: "../assets/github_wallpaper.jpg";
                     radius: 10;
+
+                    MouseArea {
+                        anchors.fill: parent;
+                        cursorShape: Qt.PointingHandCursor;
+                        onClicked: {
+                            item_cursor.x = parent.x - 5;
+                        }
+                    }
+
                 }
                 QGlib.QGRoundedImage {
                     source: "../assets/software_test_walpaper.jpg";
                     radius: 10;
+
+                    MouseArea {
+                        anchors.fill: parent;
+                        cursorShape: Qt.PointingHandCursor;
+                        onClicked: {
+                            item_cursor.x = parent.x - 5;
+                        }
+                    }
+
                 }
                 QGlib.QGRoundedImage {
                     source: "../assets/system_testing-wallpaper.jpg";
                     radius: 10;
+
+                    MouseArea {
+                        anchors.fill: parent;
+                        cursorShape: Qt.PointingHandCursor;
+                        onClicked: {
+                            item_cursor.x = parent.x - 5;
+                        }
+                    }
+
                 }
             }
 
