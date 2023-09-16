@@ -187,10 +187,9 @@ Rectangle {
                 width: 87;
                 x: -5;
                 radius: 10;
-                opacity: .7
-//                Behavior on width { NumberAnimation{duration: 500;} }
-                Behavior on x { NumberAnimation{duration: 500;} }
-                color: "#99777777";
+                opacity: .7;
+                Behavior on x { NumberAnimation{duration: 500; easing.type: Easing.OutQuad;} }
+                color: "#99888888";
             }
 
 
@@ -198,26 +197,25 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter;
                 spacing: 15;
                 Repeater {
-                model: ["Application", "Test", "Store", "Info"];
+                    model: ["Application", "Test", "Store", "Info"];
 
-                Label {
-                    id: title_label
-                    text: modelData; color: "white"; font.pixelSize: 15;
-                    MouseArea {
-                        anchors.fill: parent;
-                        onClicked: {
-                            title_cursor.x = title_label.x - 5;
-                            title_cursor.width = title_label.width + 10;
-                            title_cursor.height = title_label.height + 15;
-                            console.log(title_cursor.width);
+                    Label {
+                        id: title_label
+                        text: modelData; color: "white"; font.pixelSize: 15;
+                        MouseArea {
+                            anchors.fill: parent;
+                            cursorShape: Qt.PointingHandCursor;
+                            onClicked: {
+                                title_cursor.x = title_label.x - 5;
+                                title_cursor.width = title_label.width + 10;
+                                title_cursor.height = title_label.height + 15;
+                                console.log(title_cursor.height);
+                            }
                         }
-                    }
-                }
-
-                }
-
-            }
-        }
+                    }/*title_label*/
+                }/*Rpt*/
+            }/*row*/
+        }/*menu_titles*/
 
 
         Rectangle {
@@ -231,12 +229,37 @@ Rectangle {
 
             ///////////////
 
+            Rectangle {
+                id: item_cursor;
+                width: 110;
+                height: 125;
+                color: "99888888";
+                opacity: .7;
+                x: -5;
+                Behavior on x { NumberAnimation{duration: 500; easing.type: Easing.OutQuad;} }
+
+            }
+
+
             Row {
                 anchors.fill: parent;
                 spacing: 15;
                 QGlib.QGRoundedImage {
+                    id: image_item
                     source: "../assets/menu_background.jpg";
                     radius: 10;
+
+                    MouseArea {
+                        anchors.fill: parent;
+                        cursorShape: Qt.PointingHandCursor;
+                        onClicked: {
+                            item_cursor.x = image_item.x - 5;
+//                            item_cursor.width = image_item.width + 10;
+//                            item_cursor.height = image_item.height + 15;
+                        }
+                    }
+
+
                 }
                 QGlib.QGRoundedImage {
                     source: "../assets/github_wallpaper.jpg";
