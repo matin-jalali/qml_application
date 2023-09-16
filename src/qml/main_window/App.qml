@@ -169,7 +169,8 @@ Rectangle {
         width: parent.width/2;
         x: parent.width/5;
         y: parent.height/4;
-        spacing: 5;
+        spacing: 15;
+        z: 3
         Rectangle {
             id: menu_titles;
             width: parent.width;
@@ -179,10 +180,36 @@ Rectangle {
             Behavior on opacity {NumberAnimation{duration: 500; easing.type: Easing.OutQuad;}}
             color: "transparent";
 
+            Rectangle {
+                id: title_cursor;
+                anchors.verticalCenter: parent.verticalCenter;
+                height: parent.height;
+                radius: 10;
+                opacity: .7
+                Behavior on width { NumberAnimation{duration: 500;} }
+                Behavior on x { NumberAnimation{duration: 500;} }
+                color: "#99777777";
+            }
+
+
             Row {
                 anchors.verticalCenter: parent.verticalCenter;
                 spacing: 15;
-                Label { text: "Application"; color: "white"; font.pixelSize: 15; }
+                Label {
+                    id: title_label
+                    text: "Application"; color: "white"; font.pixelSize: 15;
+
+                    MouseArea {
+                        anchors.fill: parent;
+                        onClicked: {
+                            title_cursor.x = title_label.x - 5;
+                            title_cursor.width = title_label.width + 10;
+                            title_cursor.height = title_label.height + 15;
+                        }
+                    }
+
+
+                }
                 Label { text: "Test"; color: "white"; font.pixelSize: 15; }
                 Label { text: "Store"; color: "white"; font.pixelSize: 15; }
                 Label { text: "Info"; color: "white"; font.pixelSize: 15; }
