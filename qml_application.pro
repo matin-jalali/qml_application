@@ -1,4 +1,4 @@
-QT += quick core network
+QT += quick core network widgets charts
 CONFIG += c++17
 
 SOURCES += src/main.cpp

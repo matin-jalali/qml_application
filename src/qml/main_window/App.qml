@@ -9,10 +9,12 @@ Rectangle {
     id: _app;
     anchors.fill: parent;
     color: Constants.background_color;
-    state: "login";
+    state: "app";//"login";
 
     QGlib.QGParticle {  width: parent.width/3; height: parent.height;
-        anchors.centerIn: parent; rotation: 90; z: 1; }
+        anchors.centerIn: parent; rotation: 90; z: 1;
+        visible: _app.state !== "app";
+    }
 
     QGlib.QGColorize {
         id: _menu_background;
@@ -27,6 +29,22 @@ Rectangle {
         radius: 120;
     }
 
+    Row {
+        height: 35;
+        spacing: 5;
+        anchors.right: parent.right;
+        anchors.rightMargin: 20;
+        y: Constants.header_status_height*1.5;
+        visible: _app.state === "items";
+
+        QGlib.QGColorize {
+            height: parent.height; width: height; source: "../assets/user.png"; color: "white";
+        }
+        QGlib.QGColorize {
+            height: parent.height; width: height; source: "../assets/user.png"; color: "white";
+        }
+
+    }
 
     Item {
         id: login_page
@@ -90,25 +108,11 @@ Rectangle {
     }
 
 
-    Row {
-        height: 35;
-        spacing: 5;
-        anchors.right: parent.right;
-        anchors.rightMargin: 20;
-        y: Constants.header_status_height*1.5;
-        visible: _app.state === "items";
-
-        QGlib.QGColorize {
-            height: parent.height; width: height; source: "../assets/user.png"; color: "white";
-        }
-        QGlib.QGColorize {
-            height: parent.height; width: height; source: "../assets/user.png"; color: "white";
-        }
-
-    }
 
 
 
+
+    Operational_App { visible: _app.state === "app" }
 
 
 

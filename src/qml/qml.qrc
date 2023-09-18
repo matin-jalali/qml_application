@@ -20,5 +20,13 @@
         <file>main_window/menu/Welcome.qml</file>
         <file>main_window/menu/Users.qml</file>
         <file>assets/click_cursor.svg</file>
+        <file>main_window/Operational_App.qml</file>
+        <file>main_window/operational_app/GNSS_container.qml</file>
+        <file>main_window/operational_app/Header.qml</file>
+        <file>main_window/operational_app/Jammer_container.qml</file>
+        <file>main_window/operational_app/Main_spectrum.qml</file>
+        <file>main_window/operational_app/Map_container.qml</file>
+        <file>main_window/operational_app/Network_status.qml</file>
+        <file>main_window/operational_app/TimeLine.qml</file>
     </qresource>
 </RCC>
