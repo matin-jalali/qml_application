@@ -9,7 +9,7 @@ Rectangle {
     id: _app;
     anchors.fill: parent;
     color: Constants.background_color;
-    state: "app";//"login";
+    state: "login";//"login";
 
     QGlib.QGParticle {  width: parent.width/3; height: parent.height;
         anchors.centerIn: parent; rotation: 90; z: 1;

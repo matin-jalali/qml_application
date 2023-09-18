@@ -183,6 +183,7 @@ Item {
                                 onTriggered:{
 //                                    if(saatgard)
                                         handle.angle= handle.angle+1;
+                                    handle.angle++;
 //                                    else
 //                                        handle.angle--;
 //                                    if(handle.angle===40)

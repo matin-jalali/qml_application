@@ -5,7 +5,7 @@ import QtQuick.Window 2.12
 
 QtObject {
     //! qmlproperty: qml project's name.
-    readonly property string project_name: "qml app";
+    readonly property string project_name: "AHS";
 
     //qmlproperty: screen width/hieght.
     readonly property int width: Screen.width;

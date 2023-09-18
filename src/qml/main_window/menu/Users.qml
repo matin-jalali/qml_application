@@ -16,7 +16,7 @@ Item {
         model: ["Matin", "Add New"];
         onClicked: {
             console.log(model[currentIndex]);
-            _app.state = "items";
+            _app.state = "app";
         }
     }
 }
